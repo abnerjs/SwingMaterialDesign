@@ -35,10 +35,10 @@ public class RippleEffect {
             Graphics2D g2 = (Graphics2D) g;
             float rippleOpacity = (float) ripple.getRippleOpacity();
             Point rippleCenter = ripple.getRippleCenter();
-            int rippleRadius = (int) ripple.getRippleRadius();
+            int rippleRadius = 0;
             Color fg = g2.getColor();
             g2.setColor(new Color(fg.getRed() / 255f, fg.getGreen() / 255f, fg.getBlue() / 255f, rippleOpacity));
-            g2.fillOval(rippleCenter.x - rippleRadius, rippleCenter.y - rippleRadius, rippleRadius, rippleRadius);
+            g2.fillOval(rippleCenter.x - rippleRadius, rippleCenter.y - rippleRadius, 2 * rippleRadius, 2 * rippleRadius);
         }
     }
 
