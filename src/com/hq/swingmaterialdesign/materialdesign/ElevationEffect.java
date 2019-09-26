@@ -114,7 +114,7 @@ public class ElevationEffect {
         Graphics2D g2 = (Graphics2D) g;
         g2.setBackground(target.getParent().getBackground());
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
-        if (target instanceof MaterialButton && (((MaterialButton) target).getType() == MaterialButton.Type.FLAT)) {
+        if (target instanceof MButton && (((MButton) target).getType() == MButton.Type.FLAT)) {
             g2.setColor(MaterialUtils.brighten(target.getBackground(), (int) (((66.0 / (1 + Math.exp(-2.0 * level))) - 33.0))));
             g2.fill(new RoundRectangle2D.Float(0, 0, target.getWidth(), target.getHeight(), borderRadius, borderRadius));
         } else {

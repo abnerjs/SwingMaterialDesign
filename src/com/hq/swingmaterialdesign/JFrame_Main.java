@@ -1,9 +1,9 @@
 package com.hq.swingmaterialdesign;
 
-import com.hq.swingmaterialdesign.materialdesign.MaterialButton;
-import com.hq.swingmaterialdesign.materialdesign.MaterialPanel;
-import com.hq.swingmaterialdesign.materialdesign.MaterialComboBox;
-import com.hq.swingmaterialdesign.materialdesign.MaterialTextField;
+import com.hq.swingmaterialdesign.materialdesign.MButton;
+import com.hq.swingmaterialdesign.materialdesign.MPanel;
+import com.hq.swingmaterialdesign.materialdesign.MComboBox;
+import com.hq.swingmaterialdesign.materialdesign.MTextField;
 import com.hq.swingmaterialdesign.materialdesign.resource.MaterialColor;
 import com.hq.swingmaterialdesign.materialdesign.resource.MaterialIcons;
 import com.hq.swingmaterialdesign.materialdesign.resource.Roboto;
@@ -23,8 +23,8 @@ public class JFrame_Main extends javax.swing.JFrame {
     public JFrame_Main() {
         initComponents();
         //jButton_Main1.setFont(MaterialIcons.ICON_FONT.deriveFont(20f));
-        ((MaterialButton) jButton_Main).setType(MaterialButton.Type.FLAT);
-        ((MaterialTextField) jTextField1).setLabel("Swing Material Design Text Field");
+        ((MButton) jButton_Main).setType(MButton.Type.FLAT);
+        ((MTextField) jTextField1).setLabel("Swing Material Design Text Field");
 
         String x = String.valueOf(MaterialIcons.EXIT_TO_APP);
         this.setBackground(MaterialColor.TRANSPARENT);
@@ -39,18 +39,18 @@ public class JFrame_Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel_MainPanel = new MaterialPanel();
+        jPanel_MainPanel = new MPanel();
         jPanel_TitleBar = new javax.swing.JPanel();
-        jButton_Close = new MaterialButton();
-        jButton_Maximize = new MaterialButton();
-        jButton_Minimize = new MaterialButton();
+        jButton_Close = new MButton();
+        jButton_Maximize = new MButton();
+        jButton_Minimize = new MButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel_Main = new MaterialPanel();
+        jPanel_Main = new MPanel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new MaterialComboBox<>();
-        jTextField1 = new MaterialTextField();
-        jButton_Main = new MaterialButton();
-        jButton_Main1 = new MaterialButton();
+        jComboBox1 = new MComboBox<>();
+        jTextField1 = new MTextField();
+        jButton_Main = new MButton();
+        jButton_Main1 = new MButton();
         jToolBar_Status = new javax.swing.JToolBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
