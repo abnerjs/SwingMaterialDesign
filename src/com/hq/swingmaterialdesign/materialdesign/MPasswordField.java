@@ -56,6 +56,8 @@ public class MPasswordField extends JPasswordField {
         super.setText(text);
     }
 
+    
+    
     /**
      * Gets the label text. The label will float above any contents input into
      * this text field.

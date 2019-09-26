@@ -5,17 +5,20 @@
  */
 package com.hq.swingmaterialdesign;
 
+import com.hq.swingmaterialdesign.materialdesign.resource.MaterialIcons;
+
 /**
  *
  * @author abner
  */
 public class MainView extends javax.swing.JFrame {
-
+    int xMouse, yMouse;
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,34 +30,154 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        mPasswordField1 = new com.hq.swingmaterialdesign.materialdesign.MPasswordField();
         mButton1 = new com.hq.swingmaterialdesign.materialdesign.MButton();
+        mTextField1 = new com.hq.swingmaterialdesign.materialdesign.MTextField();
+        mButton2 = new com.hq.swingmaterialdesign.materialdesign.MButton();
+        mComboBox1 = new com.hq.swingmaterialdesign.materialdesign.MComboBox();
+        jPanel2 = new javax.swing.JPanel();
+        mButton3 = new com.hq.swingmaterialdesign.materialdesign.MButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
 
-        mButton1.setBackground(new java.awt.Color(51, 51, 51));
-        mButton1.setText("mButton1");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        mPasswordField1.setLabel("Password");
+
+        mButton1.setBackground(new java.awt.Color(204, 204, 204));
+        mButton1.setText("A simple button");
         mButton1.setBorderRadius(50);
         mButton1.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+
+        mTextField1.setLabel("Username");
+
+        mButton2.setBackground(new java.awt.Color(51, 51, 51));
+        mButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        mButton2.setText("Another button");
+        mButton2.setBorderRadius(50);
+        mButton2.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+        mButton2.setType(com.hq.swingmaterialdesign.materialdesign.MButton.Type.FLAT);
+
+        mComboBox1.setForeground(new java.awt.Color(109, 109, 109));
+        mComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select gender", "Male", "Female", "Non binary" }));
+        mComboBox1.setAccent(new java.awt.Color(0, 120, 215));
+
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanel2MouseReleased(evt);
+            }
+        });
+
+        mButton3.setText(String.valueOf(MaterialIcons.CLOSE));
+        mButton3.setFont(MaterialIcons.ICON_FONT.deriveFont(20f));
+        mButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Nunito ExtraBold", 0, 14)); // NOI18N
+        jLabel1.setText("A modern material design form Swing");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(mButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(143, Short.MAX_VALUE)
+                .addComponent(mButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(mComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(262, Short.MAX_VALUE)
-                .addComponent(mButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(320, Short.MAX_VALUE)
-                .addComponent(mButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_mButton3ActionPerformed
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
+    private void jPanel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseReleased
+        setOpacity((float) 1.0);
+    }//GEN-LAST:event_jPanel2MouseReleased
+
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+        setLocation(evt.getXOnScreen() - xMouse, evt.getYOnScreen() - yMouse);
+        setOpacity((float) 0.9);
+    }//GEN-LAST:event_jPanel2MouseDragged
 
     /**
      * @param args the command line arguments
@@ -92,6 +215,14 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton1;
+    private com.hq.swingmaterialdesign.materialdesign.MButton mButton2;
+    private com.hq.swingmaterialdesign.materialdesign.MButton mButton3;
+    private com.hq.swingmaterialdesign.materialdesign.MComboBox mComboBox1;
+    private com.hq.swingmaterialdesign.materialdesign.MPasswordField mPasswordField1;
+    private com.hq.swingmaterialdesign.materialdesign.MTextField mTextField1;
     // End of variables declaration//GEN-END:variables
 }
