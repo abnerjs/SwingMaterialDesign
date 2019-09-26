@@ -18,7 +18,7 @@ import java.awt.event.KeyEvent;
  *
  * @author bilux (i.bilux@gmail.com)
  */
-public class MPasswordField extends JTextField {
+public class MPasswordField extends JPasswordField {
 
     public static final int HINT_OPACITY_MASK = 0x99000000;
     public static final int LINE_OPACITY_MASK = 0x66000000;
