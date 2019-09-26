@@ -16,9 +16,10 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.JComponent;
 
 /**
- * A Material Design button.
+ * A material design button.
  *
- * @author bilux (i.bilux@gmail.com)
+ *
+ * @author abner (abner.js05@gmail.com)
  */
 public class MButton extends JButton {
 
@@ -38,6 +39,7 @@ public class MButton extends JButton {
         ripple = RippleEffect.applyTo(this);
         elevation = ElevationEffect.applyTo(this, 0);
         setOpaque(false);
+        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -239,7 +241,7 @@ public class MButton extends JButton {
         g2.drawString(getText().toUpperCase(), x, y);
 
         if (isEnabled()) {
-            g2.setClip(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, Math.max(borderRadius * 2 - 4, 0), Math.max(borderRadius * 2 - 4, 0)));
+            g2.setClip(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, Math.max(borderRadius - 6, 0), Math.max(borderRadius * 2 - 4, 0)));
             g2.setColor(rippleColor);
             ripple.paint(g2);
         }

@@ -10,13 +10,10 @@ import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 
 /**
- * A Material Design single-line text field is the basic way of getting user
- * input. It includes a descriptive label that appears as a placeholder and then
- * floats above the text field as content is written. You can also set a hint
- * for it to appear below the label when the text field is empty.
+ * A material design password text field
  *
  *
- * @author bilux (i.bilux@gmail.com)
+ * @author abner (abner.js05@gmail.com)
  */
 public class MPasswordField extends JPasswordField {
 

@@ -19,6 +19,7 @@ public class MIconButton extends JButton {
     public MIconButton() {
         ripple = RippleEffect.applyFixedTo(this);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        
         setOpaque(false);
         setBackground(new Color(0, 0, 0, 0));
     }
