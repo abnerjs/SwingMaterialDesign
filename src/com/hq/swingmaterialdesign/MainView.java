@@ -120,7 +120,6 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 599, -1));
 
-        mGradientButton2.setBackground(new java.awt.Color(51, 51, 51));
         mGradientButton2.setForeground(new java.awt.Color(255, 255, 255));
         mGradientButton2.setText("A gradient button");
         mGradientButton2.setBorderRadius(50);
