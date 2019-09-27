@@ -37,7 +37,11 @@ public class RippleEffect {
             Point rippleCenter = ripple.getRippleCenter();
             int rippleRadius = (int) ripple.getRippleRadius();
             Color fg = g2.getColor();
-            g2.setColor(new Color(fg.getRed() / 255f, fg.getGreen() / 255f, fg.getBlue() / 255f, rippleOpacity));
+            try {
+                g2.setColor(new Color(fg.getRed() / 255f, fg.getGreen() / 255f, fg.getBlue() / 255f, rippleOpacity));
+            } catch (Exception e) {
+                // 
+            }
             g2.fillOval(rippleCenter.x - rippleRadius, rippleCenter.y - rippleRadius, 2 * rippleRadius, 2 * rippleRadius);
         }
     }

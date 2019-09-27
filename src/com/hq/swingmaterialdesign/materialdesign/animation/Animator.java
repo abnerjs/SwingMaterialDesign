@@ -20,8 +20,12 @@ public class Animator {
 
         animatorTimer = new Timer(1, e -> {
             takenTime = (int) (System.currentTimeMillis() - startTime);
-            animationListener.onAnimation((double) takenTime / duration);
-            if (takenTime >= duration) {
+            try {
+                animationListener.onAnimation((double) takenTime / duration * 2);
+            } catch (java.lang.IllegalArgumentException except) {
+                System.out.println("Tá certo fio, confia");
+            }
+            if (takenTime >= (duration / 2)) {
                 SwingUtilities.invokeLater(() -> {
                     animatorTimer.stop();
                     animationListener.onEnd();

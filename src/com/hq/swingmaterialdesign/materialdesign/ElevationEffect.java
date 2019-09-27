@@ -52,7 +52,7 @@ public class ElevationEffect {
             }
         })
                 .setDelay(0)
-                .setDuration(500);
+                .setDuration(1);
     }
 
     /**

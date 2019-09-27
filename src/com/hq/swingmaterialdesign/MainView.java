@@ -40,6 +40,9 @@ public class MainView extends javax.swing.JFrame {
         mButton3 = new com.hq.swingmaterialdesign.materialdesign.MButton();
         jLabel1 = new javax.swing.JLabel();
         mGradientButton2 = new com.hq.swingmaterialdesign.materialdesign.MGradientButton();
+        jPanel3 = new javax.swing.JPanel();
+        mToggleButton1 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
+        mToggleButton2 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -52,20 +55,31 @@ public class MainView extends javax.swing.JFrame {
         jPanel1.add(mPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 372, 60));
 
         mButton1.setBackground(new java.awt.Color(204, 204, 204));
+        mButton1.setBorder(null);
         mButton1.setText("A simple button");
         mButton1.setBorderRadius(50);
         mButton1.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+        mButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(mButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 220, 50));
 
         mTextField1.setLabel("Username");
         jPanel1.add(mTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 69, 372, 60));
 
         mButton2.setBackground(new java.awt.Color(51, 51, 51));
-        mButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        mButton2.setBorder(null);
         mButton2.setText("Another button");
         mButton2.setBorderRadius(50);
         mButton2.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
         mButton2.setType(com.hq.swingmaterialdesign.materialdesign.MButton.Type.FLAT);
+        mButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(mButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 220, 50));
 
         mComboBox1.setForeground(new java.awt.Color(109, 109, 109));
@@ -120,11 +134,9 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 599, -1));
 
-        mGradientButton2.setBackground(new java.awt.Color(51, 51, 51));
         mGradientButton2.setForeground(new java.awt.Color(255, 255, 255));
         mGradientButton2.setText("A gradient button");
         mGradientButton2.setBorderRadius(50);
-        mGradientButton2.setContentAreaFilled(false);
         mGradientButton2.setFont(new java.awt.Font("Nunito ExtraBold", 0, 14)); // NOI18N
         mGradientButton2.setType(com.hq.swingmaterialdesign.materialdesign.MGradientButton.Type.RAISED);
         mGradientButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,15 +146,48 @@ public class MainView extends javax.swing.JFrame {
         });
         jPanel1.add(mGradientButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 220, 50));
 
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        mToggleButton1.setText("Menu option 2");
+        mToggleButton1.setBorderRadius(0);
+        mToggleButton1.setEndColor(new java.awt.Color(0, 102, 102));
+        mToggleButton1.setFont(new java.awt.Font("Nunito SemiBold", 0, 16)); // NOI18N
+        mToggleButton1.setHoverEndColor(new java.awt.Color(0, 102, 102));
+        mToggleButton1.setHoverStartColor(new java.awt.Color(0, 153, 153));
+        mToggleButton1.setIndicatorThickness(4);
+        mToggleButton1.setSelectedColor(new java.awt.Color(0, 153, 153));
+        mToggleButton1.setStartColor(new java.awt.Color(0, 102, 102));
+        mToggleButton1.setType(com.hq.swingmaterialdesign.materialdesign.MToggleButton.Type.FLAT);
+        jPanel3.add(mToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 230, 54));
+
+        mToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
+        mToggleButton2.setText("menu option 1");
+        mToggleButton2.setBorderRadius(0);
+        mToggleButton2.setEndColor(new java.awt.Color(0, 102, 102));
+        mToggleButton2.setFont(new java.awt.Font("Nunito SemiBold", 0, 16)); // NOI18N
+        mToggleButton2.setHoverEndColor(new java.awt.Color(0, 102, 102));
+        mToggleButton2.setHoverStartColor(new java.awt.Color(0, 153, 153));
+        mToggleButton2.setIndicatorThickness(4);
+        mToggleButton2.setSelectedColor(new java.awt.Color(0, 153, 153));
+        mToggleButton2.setStartColor(new java.awt.Color(0, 102, 102));
+        mToggleButton2.setType(com.hq.swingmaterialdesign.materialdesign.MToggleButton.Type.FLAT);
+        jPanel3.add(mToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 230, 54));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -167,8 +212,16 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseDragged
 
     private void mGradientButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mGradientButton2ActionPerformed
-        // TODO add your handling code here:
+        mToggleButton1.unselect();
     }//GEN-LAST:event_mGradientButton2ActionPerformed
+
+    private void mButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButton1ActionPerformed
+        mToggleButton1.unselect();
+    }//GEN-LAST:event_mButton1ActionPerformed
+
+    private void mButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mButton2ActionPerformed
+        mToggleButton1.unselect();
+    }//GEN-LAST:event_mButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +262,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton1;
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton2;
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton3;
@@ -216,5 +270,7 @@ public class MainView extends javax.swing.JFrame {
     private com.hq.swingmaterialdesign.materialdesign.MGradientButton mGradientButton2;
     private com.hq.swingmaterialdesign.materialdesign.MPasswordField mPasswordField1;
     private com.hq.swingmaterialdesign.materialdesign.MTextField mTextField1;
+    private com.hq.swingmaterialdesign.materialdesign.MToggleButton mToggleButton1;
+    private com.hq.swingmaterialdesign.materialdesign.MToggleButton mToggleButton2;
     // End of variables declaration//GEN-END:variables
 }

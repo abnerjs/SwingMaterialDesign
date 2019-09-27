@@ -2,8 +2,10 @@ package com.hq.swingmaterialdesign.materialdesign;
 
 import com.hq.swingmaterialdesign.materialdesign.resource.MaterialColor;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.FontMetrics;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -13,6 +15,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 
 /**
@@ -21,23 +24,29 @@ import javax.swing.JComponent;
  *
  * @author abner (abner.js05@gmail.com)
  */
-public class MButton extends JButton {
+public class MToggleButton extends JButton {
 
     private RippleEffect ripple;
-    private ElevationEffect elevation;
     private Type type = Type.DEFAULT;
     private boolean isMousePressed = false;
     private boolean isMouseOver = false;
     private Color rippleColor = Color.WHITE;
     private Cursor cursor = super.getCursor();
     private int borderRadius = 2;
+    private Color startColor = new Color(0, 153, 153);
+    private Color endColor = Color.GREEN;
+    private Color hoverStartColor = new Color(255, 0, 255);
+    private Color hoverEndColor = Color.green;
+    private int indicatorThickness = 2;
+    private Color indicatorColor = Color.white;
+    private Color selectedColor = Color.green;
+    private boolean allowTab = true;
 
     /**
      * Creates a new button.
      */
-    public MButton() {
+    public MToggleButton() {
         ripple = RippleEffect.applyTo(this);
-        elevation = ElevationEffect.applyTo(this, 0);
         setOpaque(false);
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
@@ -45,25 +54,22 @@ public class MButton extends JButton {
             @Override
             public void mousePressed(MouseEvent mouseEvent) {
                 isMousePressed = true;
-                elevation.setLevel(getElevation());
+                getStyle();
             }
 
             @Override
             public void mouseReleased(MouseEvent mouseEvent) {
                 isMousePressed = false;
-                elevation.setLevel(getElevation());
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 isMouseOver = true;
-                elevation.setLevel(getElevation());
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 isMouseOver = false;
-                elevation.setLevel(getElevation());
             }
         });
 
@@ -157,7 +163,6 @@ public class MButton extends JButton {
      */
     public void setBorderRadius(int borderRadius) {
         this.borderRadius = borderRadius;
-        elevation.setBorderRadius(borderRadius);
     }
 
     @Override
@@ -172,6 +177,75 @@ public class MButton extends JButton {
         this.cursor = cursor;
     }
 
+    public Color getSelectedColor() {
+        return selectedColor;
+    }
+
+    public void setSelectedColor(Color selectedColor) {
+        this.selectedColor = selectedColor;
+    }
+
+    public int getIndicatorThickness() {
+        return indicatorThickness;
+    }
+
+    public void setIndicatorThickness(int indicatorThickness) {
+        this.indicatorThickness = indicatorThickness;
+    }
+
+    public Color getIndicatorColor() {
+        return indicatorColor;
+    }
+
+    public void setIndicatorColor(Color indicatorColor) {
+        this.indicatorColor = indicatorColor;
+    }
+
+    public Color getStartColor() {
+        return startColor;
+    }
+
+    public void setStartColor(Color startColor) {
+        this.startColor = startColor;
+    }
+
+    public boolean isAllowTab() {
+        return allowTab;
+    }
+
+    public void setAllowTab(boolean allowTab) {
+        this.allowTab = allowTab;
+    }
+
+    public Color getEndColor() {
+        return endColor;
+    }
+
+    public void setEndColor(Color endColor) {
+        this.endColor = endColor;
+    }
+
+    public void unselect(){
+        this.setSelected(false);
+        this.setBorder(BorderFactory.createEmptyBorder());
+    }
+    
+    public Color getHoverStartColor() {
+        return hoverStartColor;
+    }
+
+    public void setHoverStartColor(Color hoverStartColor) {
+        this.hoverStartColor = hoverStartColor;
+    }
+
+    public Color getHoverEndColor() {
+        return hoverEndColor;
+    }
+
+    public void setHoverEndColor(Color hoverEndColor) {
+        this.hoverEndColor = hoverEndColor;
+    }
+
     @Override
     protected void processFocusEvent(FocusEvent focusEvent) {
         super.processFocusEvent(focusEvent);
@@ -182,8 +256,32 @@ public class MButton extends JButton {
         super.processMouseEvent(mouseEvent);
     }
 
+    private void getStyle() {
+        if (isMousePressed) {
+
+            if (isAllowTab()) {
+                Component[] comp = getParent().getComponents();
+                for (int i = 0; i < comp.length; i++) {
+                    if (comp[i] instanceof MToggleButton) {
+
+                        ((MToggleButton) comp[i]).setSelected(false);
+                        ((MToggleButton) comp[i]).setBorder(BorderFactory.createEmptyBorder());
+                    }
+                }
+                this.setBorder(BorderFactory.createMatteBorder(0, indicatorThickness, 0, 0, indicatorColor));
+                this.setSelected(true);
+            }
+
+        } else {
+            this.setBorder(BorderFactory.createEmptyBorder());
+            this.setSelected(false);
+        }
+    }
+
     private int getElevation() {
         if (isMousePressed) {
+            this.setBorder(BorderFactory.createMatteBorder(0, indicatorThickness, 0, 0, indicatorColor));
+            this.setSelected(true);
             return 2;
         } else if (type == Type.RAISED || isMouseOver) {
             return 1;
@@ -199,7 +297,6 @@ public class MButton extends JButton {
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         if ((type != Type.FLAT) && isEnabled()) {
-            elevation.paint(g);
             g2.translate(MaterialShadow.OFFSET_LEFT, MaterialShadow.OFFSET_TOP);
         }
 
@@ -214,18 +311,32 @@ public class MButton extends JButton {
         }
 
         if (isEnabled()) {
-            g2.setColor(getBackground());
+            GradientPaint gp = new GradientPaint(0, 0, startColor, 300, getHeight(), endColor);
+            g2.setPaint(gp);
+            if (isMouseOver) {
+                gp = new GradientPaint(0, 0, hoverStartColor, 300, getHeight(), hoverEndColor);
+                g2.setPaint(gp);
+            } else {
+                gp = new GradientPaint(0, 0, startColor, 300, getHeight(), endColor);
+                g2.setPaint(gp);
+            }
+
             g2.fill(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, borderRadius, borderRadius));
-            g2.setColor(new Color(rippleColor.getRed() / 255f, rippleColor.getBlue() / 255f, rippleColor.getBlue() / 255f, 0.12f));
             if (type == Type.FLAT) {
-                elevation.paint(g);
                 //g2.setColor(MaterialUtils.brighten(getBackground()));
                 //g2.fill(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, borderRadius, borderRadius));
             }
+
         } else {
             Color bg = getBackground();
             g2.setColor(new Color(bg.getRed() / 255f, bg.getGreen() / 255f, bg.getBlue() / 255f, 0.6f));
+
             g2.fill(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, borderRadius * 2, borderRadius * 2));
+        }
+
+        if (isSelected()) {
+            g2.setPaint(selectedColor);
+            g2.fillRoundRect(0, 0, getWidth(), getHeight(), borderRadius, borderRadius);
         }
 
         FontMetrics metrics = g.getFontMetrics(getFont());
@@ -234,6 +345,7 @@ public class MButton extends JButton {
         g2.setFont(getFont());
         if (isEnabled()) {
             g2.setColor(getForeground());
+
         } else {
             Color fg = getForeground();
             g2.setColor(new Color(fg.getRed() / 255f, fg.getGreen() / 255f, fg.getBlue() / 255f, 0.6f));
@@ -251,7 +363,6 @@ public class MButton extends JButton {
 //    protected void paintBorder(Graphics g) {
 //        //intentionally left blank
 //    }
-
     /**
      * Button types.
      */
