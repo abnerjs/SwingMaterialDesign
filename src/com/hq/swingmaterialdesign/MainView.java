@@ -18,7 +18,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 
     /**
