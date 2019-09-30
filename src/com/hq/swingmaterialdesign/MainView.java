@@ -6,6 +6,9 @@
 package com.hq.swingmaterialdesign;
 
 import com.hq.swingmaterialdesign.materialdesign.resource.MaterialIcons;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -40,6 +43,7 @@ public class MainView extends javax.swing.JFrame {
         mButton3 = new com.hq.swingmaterialdesign.materialdesign.MButton();
         jLabel1 = new javax.swing.JLabel();
         mGradientButton2 = new com.hq.swingmaterialdesign.materialdesign.MGradientButton();
+        mGradientPanel1 = new com.hq.swingmaterialdesign.materialdesign.MGradientPanel();
         jPanel3 = new javax.swing.JPanel();
         mToggleButton1 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
         mToggleButton2 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
@@ -145,6 +149,23 @@ public class MainView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mGradientButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 220, 50));
+
+        mGradientPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        mGradientPanel1.setBorderRadius(120);
+        mGradientPanel1.setFillBackground(false);
+
+        javax.swing.GroupLayout mGradientPanel1Layout = new javax.swing.GroupLayout(mGradientPanel1);
+        mGradientPanel1.setLayout(mGradientPanel1Layout);
+        mGradientPanel1Layout.setHorizontalGroup(
+            mGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
+        mGradientPanel1Layout.setVerticalGroup(
+            mGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(mGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 120, 120));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -268,6 +289,7 @@ public class MainView extends javax.swing.JFrame {
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton3;
     private com.hq.swingmaterialdesign.materialdesign.MComboBox mComboBox1;
     private com.hq.swingmaterialdesign.materialdesign.MGradientButton mGradientButton2;
+    private com.hq.swingmaterialdesign.materialdesign.MGradientPanel mGradientPanel1;
     private com.hq.swingmaterialdesign.materialdesign.MPasswordField mPasswordField1;
     private com.hq.swingmaterialdesign.materialdesign.MTextField mTextField1;
     private com.hq.swingmaterialdesign.materialdesign.MToggleButton mToggleButton1;
