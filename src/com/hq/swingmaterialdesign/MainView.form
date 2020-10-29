@@ -234,6 +234,7 @@
             </Property>
             <Property name="borderRadius" type="int" value="120"/>
             <Property name="fillBackground" type="boolean" value="false"/>
+            <Property name="fillImage" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

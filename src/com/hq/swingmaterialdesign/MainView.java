@@ -153,6 +153,7 @@ public class MainView extends javax.swing.JFrame {
         mGradientPanel1.setBackground(new java.awt.Color(255, 255, 255));
         mGradientPanel1.setBorderRadius(120);
         mGradientPanel1.setFillBackground(false);
+        mGradientPanel1.setFillImage(true);
 
         javax.swing.GroupLayout mGradientPanel1Layout = new javax.swing.GroupLayout(mGradientPanel1);
         mGradientPanel1.setLayout(mGradientPanel1Layout);
