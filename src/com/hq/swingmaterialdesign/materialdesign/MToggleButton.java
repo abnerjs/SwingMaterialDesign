@@ -224,6 +224,12 @@ public class MToggleButton extends JButton {
     public void setEndColor(Color endColor) {
         this.endColor = endColor;
     }
+    
+    public void select() {
+        this.setSelected(true);
+        this.setBorder(BorderFactory.createMatteBorder(0, this.indicatorThickness, 0, 0, this.indicatorColor));
+        this.repaint();
+    }
 
     public void unselect(){
         this.setSelected(false);
