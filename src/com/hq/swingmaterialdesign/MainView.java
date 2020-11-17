@@ -44,6 +44,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         mGradientButton2 = new com.hq.swingmaterialdesign.materialdesign.MGradientButton();
         mGradientPanel1 = new com.hq.swingmaterialdesign.materialdesign.MGradientPanel();
+        mFormattedTextField1 = new com.hq.swingmaterialdesign.materialdesign.MFormattedTextField();
         jPanel3 = new javax.swing.JPanel();
         mToggleButton1 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
         mToggleButton2 = new com.hq.swingmaterialdesign.materialdesign.MToggleButton();
@@ -55,6 +56,8 @@ public class MainView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        mPasswordField1.setEchoChar('\u25cf');
+        mPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         mPasswordField1.setLabel("Password");
         jPanel1.add(mPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 372, 60));
 
@@ -167,6 +170,9 @@ public class MainView extends javax.swing.JFrame {
         );
 
         jPanel1.add(mGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 120, 120));
+
+        mFormattedTextField1.setText("mFormattedTextField1");
+        jPanel1.add(mFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 270, 60));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -289,6 +295,7 @@ public class MainView extends javax.swing.JFrame {
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton2;
     private com.hq.swingmaterialdesign.materialdesign.MButton mButton3;
     private com.hq.swingmaterialdesign.materialdesign.MComboBox mComboBox1;
+    private com.hq.swingmaterialdesign.materialdesign.MFormattedTextField mFormattedTextField1;
     private com.hq.swingmaterialdesign.materialdesign.MGradientButton mGradientButton2;
     private com.hq.swingmaterialdesign.materialdesign.MGradientPanel mGradientPanel1;
     private com.hq.swingmaterialdesign.materialdesign.MPasswordField mPasswordField1;

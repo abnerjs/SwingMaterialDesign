@@ -196,6 +196,7 @@ public class MGradientPanel extends JPanel
         final int h = this.getHeight();
         final Dimension arcs = new Dimension(this.borderRadius, this.borderRadius);
         if (this.isFillImage()) {
+            g2d.setComposite(AlphaComposite.SrcAtop);
             g2d.drawImage(this.image = makeRoundedCorner(toBufferedImage(this.image), this.borderRadius * 100), 0, 0, this.getWidth(), this.getHeight(), this);
         }
         else {
