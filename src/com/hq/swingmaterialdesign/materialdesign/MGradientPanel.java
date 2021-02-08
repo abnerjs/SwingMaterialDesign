@@ -52,7 +52,7 @@ public class MGradientPanel extends JPanel
     }
     
     public void setIcon() {
-        new ImageIcon(this.getClass().getResource(this.imagePath));
+        this.icon = new ImageIcon(this.getClass().getResource(this.imagePath));
     }
     
     public Image getImage() {
@@ -198,7 +198,7 @@ public class MGradientPanel extends JPanel
         final Dimension arcs = new Dimension(this.borderRadius, this.borderRadius);
         if (this.isFillImage()) {
             g2d.setComposite(AlphaComposite.SrcAtop);
-            g2d.drawImage(this.image = makeRoundedCorner(toBufferedImage(this.image), this.borderRadius * 100), 0, 0, this.getWidth(), this.getHeight(), this);
+            g2d.drawImage(this.image = makeRoundedCorner(toBufferedImage(this.image), this.borderRadius), 0, 0, this.getWidth(), this.getHeight(), this);
         }
         else {
             final GradientPaint gp = new GradientPaint(0.0f, 0.0f, this.startColor, (float)this.gradientFocus, (float)h, this.endColor);
