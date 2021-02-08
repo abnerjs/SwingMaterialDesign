@@ -43,7 +43,8 @@ public class MGradientPanel extends JPanel
     
     public void setImagePath(final String imagePath) {
         this.imagePath = imagePath;
-        this.setIcon();
+        this.icon = new ImageIcon(this.getClass().getResource(this.imagePath));
+        this.image = this.icon.getImage();
     }
     
     public ImageIcon getIcon() {
